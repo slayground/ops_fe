@@ -18,4 +18,5 @@ Thumbs.db
 .eslintignore
 .prettierignore
 yarn-error.log
-yarn.log
+yarn.lock
+dist
