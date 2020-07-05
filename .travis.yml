@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run phamstack/parcel_ops yarn test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'parcel_ops'
+  env: 'ParcelOps-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-984224616232'
+  buket_path: 'parcel_ops'
+  on:
+    branch: master
+  access_key_id: '$AWS_ACCESS_KEY'
+  secret_access_key:
+    secure: '$AWS_SECRET_KEY'
